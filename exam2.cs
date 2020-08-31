@@ -1,3 +1,4 @@
+
 using System;
 
 public struct HeartPatient 
@@ -12,6 +13,7 @@ class exam
     static void Main(string[] args)
     {
         HeartPatient hp1;//new HeartPatient called hp1
+        string chlvl = ""; // <---------------------------------- Use varible to store values inside loops
 
         Console.Write("Enter the Name: ");
         hp1.Name = Console.ReadLine();//Input Patient Name
@@ -22,24 +24,30 @@ class exam
         Console.Write("Enter the Total serum cholesterol: ");
         hp1.SCholesterol = float.Parse(Console.ReadLine());//Input Patient Cholesterol level and convert to float
 
-        if (hp1.Gender == "Female" || hp1.Gender == "Male" && hp1.age >= 20)//check gender and age
+        if (hp1.age >= 20)//check age
         {
             if (hp1.SCholesterol < 125)//check colesterol level less than 125
             {
-                Console.WriteLine("Hello {0}, your cholesterol level is Low",hp1.Name);
+                //Console.WriteLine("Hello {0}, your cholesterol level is Low",hp1.Name);
+                chlvl = "Low"; // <---------------------------------------------------------------- Value is assiged to Variable
             }
             else if (hp1.SCholesterol >= 125 && hp1.SCholesterol <= 200)//check colesterol level in between of 125 and 200
             {
-                Console.WriteLine("Hello {0}, your cholesterol level is Normal",hp1.Name);
+                //Console.WriteLine("Hello {0}, your cholesterol level is Normal",hp1.Name);
+                chlvl = "Normal";
             }
             else if (hp1.SCholesterol > 200)//check colesterol level larger than 200
             {
-                Console.WriteLine("Hello {0}, your cholesterol level is High",hp1.Name);
+                //Console.WriteLine("Hello {0}, your cholesterol level is High",hp1.Name);
+                chlvl = "High";
             }
+            //Console.WriteLine("Hello {0}, your cholesterol level is {1}",hp1.Name,chlvl);
         }
         else if (hp1.age <= 19)//check age less than or equl to 19
         {
-            Console.WriteLine("Hello {0}, your cholesterol level is High",hp1.Name);
+            //Console.WriteLine("Hello {0}, your cholesterol level is High",hp1.Name);
+            chlvl = "High";
         }
+        Console.WriteLine("Hello {0}, your cholesterol level is {1}",hp1.Name,chlvl);
     }
 }
