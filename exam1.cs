@@ -1,3 +1,9 @@
+/*
+ * @Author: Pasindu Akalpa 
+ * @Date: 2020-09-04 14:22:34 
+ * @Last Modified by:   ------------- 
+ * @Last Modified time: 2020-09-04 14:22:34 
+ */
 using System;
 
 public struct patientData
@@ -7,7 +13,7 @@ public struct patientData
     public float lecp,recp;// variables to strore left and right Cylinder Power 
 }
 
-class exam 
+class CorneaCare
 {
     static void Main(string[] args)
     {
@@ -25,11 +31,25 @@ class exam
             Console.Write("Enter Right Eye Axis ");
             p1.rea = int.Parse(Console.ReadLine());//Right Eye 
 
-            float sphEq = (p1.lecp + p1.recp)/2f;// Calculation of Spherical Equivalent 
+            CorneaCare cc = new CorneaCare();
 
-            Console.WriteLine("\nLeft Eye: {0} {1}\nRight Eye: {2} {3}\nCalculated Spherical Equivalent is: {4}",p1.lecp,p1.lea,p1.recp,p1.rea,sphEq);//print values to console
+            float answer = cc.CalculateSE(p1.lecp,p1.recp);
 
-            Console.Write("\nDo you to enter another Prescription (y/n)? ");
+            Console.WriteLine("\nLeft Eye: {0} {1}\nRight Eye: {2} {3}\nCalculated Spherical Equivalent is: {4}",p1.lecp,p1.lea,p1.recp,p1.rea,answer);//print values to console
+            End();
+            
+        }
+        Console.WriteLine("Thank you for choosing Cornea Care."); //print thank you if input is 'n' or 'N'
+    }
+
+    static float CalculateSE(p1.lecp, p1.recp)
+    {
+        float sphEq = (p1.lecp + p1.recp)/2.0f;// Calculation of Spherical Equivalent
+        return sphEq;
+    }
+    /*static void End()
+    {
+        Console.Write("\nDo you to enter another Prescription (y/n)? ");
             char choise = char.Parse(Console.ReadLine());
             if (choise == 'n'|| choise == 'N')// check input yes or no
             {
@@ -39,7 +59,5 @@ class exam
             {
                 continue;// else continue loop
             }
-        }
-        Console.WriteLine("Thank you for choosing Cornea Care."); //print thank you if input is 'n' or 'N'
-    }
+    }*/
 }
