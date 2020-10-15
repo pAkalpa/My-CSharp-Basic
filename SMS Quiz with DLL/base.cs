@@ -11,7 +11,7 @@ namespace basefile
         public void displayVotes(int a,int b,int c)
         {
             //Print Values on Terminal
-            Console.WriteLine("\nVotes\nThe God Father = {0}\nTwilight = {1}\nHarry Potter = {2}",a,b,c);
+            Console.WriteLine("\nMovie Name\tVotes\nThe God Father\t= {0}\nTwilight\t= {1}\nHarry Potter\t= {2}",a,b,c);
         }
         public (int,int,int) cntVote (string a)
         {
